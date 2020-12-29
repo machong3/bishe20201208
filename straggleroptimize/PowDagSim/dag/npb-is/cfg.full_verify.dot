@@ -1,0 +1,37 @@
+digraph "CFG for 'full_verify' function" {
+	label="CFG for 'full_verify' function";
+
+	Node0x5f60410 [shape=record,label="{%0:\l  %1 = load i32*, i32** @key_buff_ptr_global, align 8, !tbaa !1\l  br label %2\l}"];
+	Node0x5f60410 -> Node0x5f4ed60;
+	Node0x5f4ed10 [shape=record,label="{.preheader:                                       \l  %.pre = load i32, i32* getelementptr inbounds ([1048576 x i32], [1048576 x\l... i32]* @key_array, i64 0, i64 0), align 16, !tbaa !5\l  br label %25\l}"];
+	Node0x5f4ed10 -> Node0x5f4ef90;
+	Node0x5f4ed60 [shape=record,label="{%2:\l\l  %indvars.iv8 = phi i64 [ 0, %0 ], [ %indvars.iv.next9, %._crit_edge ]\l  %3 = icmp sgt i64 %indvars.iv8, 0\l  br i1 %3, label %4, label %.preheader1\l|{<s0>T|<s1>F}}"];
+	Node0x5f4ed60:s0 -> Node0x5f4edb0;
+	Node0x5f4ed60:s1 -> Node0x5f4ee00;
+	Node0x5f4edb0 [shape=record,label="{%4:\l\l  %5 = add nsw i64 %indvars.iv8, -1\l  %6 = getelementptr inbounds [1024 x i32], [1024 x i32]* @bucket_ptrs, i64 0,\l... i64 %5\l  %7 = load i32, i32* %6, align 4, !tbaa !5\l  br label %.preheader1\l}"];
+	Node0x5f4edb0 -> Node0x5f4ee00;
+	Node0x5f4ee00 [shape=record,label="{.preheader1:                                      \l  %i.0.ph = phi i32 [ 0, %2 ], [ %7, %4 ]\l  %8 = getelementptr inbounds [1024 x i32], [1024 x i32]* @bucket_ptrs, i64 0,\l... i64 %indvars.iv8\l  %9 = load i32, i32* %8, align 4, !tbaa !5\l  %10 = icmp slt i32 %i.0.ph, %9\l  br i1 %10, label %.lr.ph, label %._crit_edge\l|{<s0>T|<s1>F}}"];
+	Node0x5f4ee00:s0 -> Node0x5f4ee50;
+	Node0x5f4ee00:s1 -> Node0x5f4ef40;
+	Node0x5f4ee50 [shape=record,label="{.lr.ph:                                           \l  %11 = sext i32 %i.0.ph to i64\l  br label %12\l}"];
+	Node0x5f4ee50 -> Node0x5f4eea0;
+	Node0x5f4eea0 [shape=record,label="{%12:\l\l  %indvars.iv6 = phi i64 [ %11, %.lr.ph ], [ %indvars.iv.next7, %12 ]\l  %13 = getelementptr inbounds [1048576 x i32], [1048576 x i32]* @key_buff2,\l... i64 0, i64 %indvars.iv6\l  %14 = load i32, i32* %13, align 4, !tbaa !5\l  %15 = sext i32 %14 to i64\l  %16 = getelementptr inbounds i32, i32* %1, i64 %15\l  %17 = load i32, i32* %16, align 4, !tbaa !5\l  %18 = add nsw i32 %17, -1\l  store i32 %18, i32* %16, align 4, !tbaa !5\l  %19 = load i32, i32* %13, align 4, !tbaa !5\l  %20 = sext i32 %18 to i64\l  %21 = getelementptr inbounds [1048576 x i32], [1048576 x i32]* @key_array,\l... i64 0, i64 %20\l  store i32 %19, i32* %21, align 4, !tbaa !5\l  %indvars.iv.next7 = add nsw i64 %indvars.iv6, 1\l  %22 = load i32, i32* %8, align 4, !tbaa !5\l  %23 = sext i32 %22 to i64\l  %24 = icmp slt i64 %indvars.iv.next7, %23\l  br i1 %24, label %12, label %._crit_edge.loopexit\l|{<s0>T|<s1>F}}"];
+	Node0x5f4eea0:s0 -> Node0x5f4eea0;
+	Node0x5f4eea0:s1 -> Node0x5f4eef0;
+	Node0x5f4eef0 [shape=record,label="{._crit_edge.loopexit:                             \l  br label %._crit_edge\l}"];
+	Node0x5f4eef0 -> Node0x5f4ef40;
+	Node0x5f4ef40 [shape=record,label="{._crit_edge:                                      \l  %indvars.iv.next9 = add nuw nsw i64 %indvars.iv8, 1\l  %exitcond10 = icmp eq i64 %indvars.iv.next9, 1024\l  br i1 %exitcond10, label %.preheader, label %2\l|{<s0>T|<s1>F}}"];
+	Node0x5f4ef40:s0 -> Node0x5f4ed10;
+	Node0x5f4ef40:s1 -> Node0x5f4ed60;
+	Node0x5f4ef90 [shape=record,label="{%25:\l\l  %26 = phi i32 [ %.pre, %.preheader ], [ %44, %25 ]\l  %indvars.iv = phi i64 [ 1, %.preheader ], [ %indvars.iv.next.4, %25 ]\l  %j.12 = phi i32 [ 0, %.preheader ], [ %.j.1.4, %25 ]\l  %27 = getelementptr inbounds [1048576 x i32], [1048576 x i32]* @key_array,\l... i64 0, i64 %indvars.iv\l  %28 = load i32, i32* %27, align 4, !tbaa !5\l  %29 = icmp sgt i32 %26, %28\l  %30 = zext i1 %29 to i32\l  %.j.1 = add nsw i32 %30, %j.12\l  %indvars.iv.next = add nuw nsw i64 %indvars.iv, 1\l  %31 = getelementptr inbounds [1048576 x i32], [1048576 x i32]* @key_array,\l... i64 0, i64 %indvars.iv.next\l  %32 = load i32, i32* %31, align 4, !tbaa !5\l  %33 = icmp sgt i32 %28, %32\l  %34 = zext i1 %33 to i32\l  %.j.1.1 = add nsw i32 %34, %.j.1\l  %indvars.iv.next.1 = add nuw nsw i64 %indvars.iv.next, 1\l  %35 = getelementptr inbounds [1048576 x i32], [1048576 x i32]* @key_array,\l... i64 0, i64 %indvars.iv.next.1\l  %36 = load i32, i32* %35, align 4, !tbaa !5\l  %37 = icmp sgt i32 %32, %36\l  %38 = zext i1 %37 to i32\l  %.j.1.2 = add nsw i32 %38, %.j.1.1\l  %indvars.iv.next.2 = add nuw nsw i64 %indvars.iv.next.1, 1\l  %39 = getelementptr inbounds [1048576 x i32], [1048576 x i32]* @key_array,\l... i64 0, i64 %indvars.iv.next.2\l  %40 = load i32, i32* %39, align 4, !tbaa !5\l  %41 = icmp sgt i32 %36, %40\l  %42 = zext i1 %41 to i32\l  %.j.1.3 = add nsw i32 %42, %.j.1.2\l  %indvars.iv.next.3 = add nuw nsw i64 %indvars.iv.next.2, 1\l  %43 = getelementptr inbounds [1048576 x i32], [1048576 x i32]* @key_array,\l... i64 0, i64 %indvars.iv.next.3\l  %44 = load i32, i32* %43, align 4, !tbaa !5\l  %45 = icmp sgt i32 %40, %44\l  %46 = zext i1 %45 to i32\l  %.j.1.4 = add nsw i32 %46, %.j.1.3\l  %indvars.iv.next.4 = add nuw nsw i64 %indvars.iv.next.3, 1\l  %exitcond.4 = icmp eq i64 %indvars.iv.next.4, 1048576\l  br i1 %exitcond.4, label %47, label %25\l|{<s0>T|<s1>F}}"];
+	Node0x5f4ef90:s0 -> Node0x5f4efe0;
+	Node0x5f4ef90:s1 -> Node0x5f4ef90;
+	Node0x5f4efe0 [shape=record,label="{%47:\l\l  %.j.1.lcssa = phi i32 [ %.j.1.4, %25 ]\l  %48 = icmp eq i32 %.j.1.lcssa, 0\l  br i1 %48, label %52, label %49\l|{<s0>T|<s1>F}}"];
+	Node0x5f4efe0:s0 -> Node0x5f4f080;
+	Node0x5f4efe0:s1 -> Node0x5f4f030;
+	Node0x5f4f030 [shape=record,label="{%49:\l\l  %50 = sext i32 %.j.1.lcssa to i64\l  %51 = tail call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([46 x\l... i8], [46 x i8]* @.str1, i64 0, i64 0), i64 %50) #4\l  br label %55\l}"];
+	Node0x5f4f030 -> Node0x5f4f0d0;
+	Node0x5f4f080 [shape=record,label="{%52:\l\l  %53 = load i32, i32* @passed_verification, align 4, !tbaa !5\l  %54 = add nsw i32 %53, 1\l  store i32 %54, i32* @passed_verification, align 4, !tbaa !5\l  br label %55\l}"];
+	Node0x5f4f080 -> Node0x5f4f0d0;
+	Node0x5f4f0d0 [shape=record,label="{%55:\l\l  ret void\l}"];
+}

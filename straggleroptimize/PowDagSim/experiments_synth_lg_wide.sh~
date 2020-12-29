@@ -1,0 +1,38 @@
+
+python3 main.py -a 26 -L INFO --dag synth-lg-long -P 1000 -m 100 -s 100 > results/experiments/exp_synth-lg-long_P1000_m100_s100
+echo "exp_synth-lg-long_P1000_m100_s100"
+
+python3 main.py -a 26 -L INFO --dag synth-lg-long -P 2000 -m 100 -s 100 > results/experiments/exp_synth-lg-long_P2000_m100_s100
+echo "exp_synth-lg-long_P2000_m100_s100"
+
+python3 main.py -a 26 -L INFO --dag synth-lg-long -P 3000 -m 100 -s 100 > results/experiments/exp_synth-lg-long_P3000_m100_s100
+echo "exp_synth-lg-long_P3000_m100_s100"
+
+python3 main.py -a 26 -L INFO --dag synth-lg-long -P 4000 -m 100 -s 100 > results/experiments/exp_synth-lg-long_P4000_m100_s100
+echo "exp_synth-lg-long_P4000_m100_s100"
+
+python3 main.py -a 26 -L INFO --dag synth-lg-long -P 5000 -m 100 -s 100 > results/experiments/exp_synth-lg-long_P5000_m100_s100
+echo "exp_synth-lg-long_P5000_m100_s100"
+
+python3 main.py -a 26 -L INFO --dag synth-lg-long -P 6000 -m 100 -s 100 > results/experiments/exp_synth-lg-long_P6000_m100_s100
+echo "exp_synth-lg-long_P6000_m100_s100"
+
+
+
+python3 main.py -a 26 -L INFO --dag synth-lg-long -P 2000 -m 200 -s 100 > results/experiments/exp_synth-lg-long_P2000_m200_s100
+echo "exp_synth-lg-long_P1000_m200_s100"
+
+python3 main.py -a 26 -L INFO --dag synth-lg-long -P 4000 -m 200 -s 100 > results/experiments/exp_synth-lg-long_P4000_m200_s100
+echo "exp_synth-lg-long_P2000_m200_s100"
+
+python3 main.py -a 26 -L INFO --dag synth-lg-long -P 6000 -m 200 -s 100 > results/experiments/exp_synth-lg-long_P6000_m200_s100
+echo "exp_synth-lg-long_P3000_m200_s100"
+
+python3 main.py -a 26 -L INFO --dag synth-lg-long -P 8000 -m 200 -s 100 > results/experiments/exp_synth-lg-long_P8000_m200_s100
+echo "exp_synth-lg-long_P4000_m200_s100"
+
+python3 main.py -a 26 -L INFO --dag synth-lg-long -P 10000 -m 200 -s 100 > results/experiments/exp_synth-lg-long_P10000_m200_s100
+echo "exp_synth-lg-long_P5000_m200_s100"
+
+python3 main.py -a 26 -L INFO --dag synth-lg-long -P 12000 -m 200 -s 100 > results/experiments/exp_synth-lg-long_P12000_m200_s100
+echo "exp_synth-lg-long_P6000_m200_s100"

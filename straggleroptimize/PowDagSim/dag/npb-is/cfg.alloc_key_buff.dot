@@ -1,0 +1,23 @@
+digraph "CFG for 'alloc_key_buff' function" {
+	label="CFG for 'alloc_key_buff' function";
+
+	Node0x5f60460 [shape=record,label="{%0:\l  %1 = tail call i32 @omp_get_max_threads() #4\l  %2 = sext i32 %1 to i64\l  %3 = shl nsw i64 %2, 3\l  %4 = tail call noalias i8* @malloc(i64 %3) #4\l  %5 = icmp eq i8* %4, null\l  br i1 %5, label %6, label %alloc_mem.exit\l|{<s0>T|<s1>F}}"];
+	Node0x5f60460:s0 -> Node0x5f604b0;
+	Node0x5f60460:s1 -> Node0x5f60500;
+	Node0x5f604b0 [shape=record,label="{%6:\l\l  tail call void @perror(i8* getelementptr inbounds ([24 x i8], [24 x i8]*\l... @.str, i64 0, i64 0)) #6\l  tail call void @exit(i32 1) #7\l  unreachable\l}"];
+	Node0x5f60500 [shape=record,label="{alloc_mem.exit:                                   \l  store i8* %4, i8** bitcast (i32*** @bucket_size to i8**), align 8, !tbaa !1\l  %7 = icmp sgt i32 %1, 0\l  br i1 %7, label %.lr.ph.preheader, label %.preheader\l|{<s0>T|<s1>F}}"];
+	Node0x5f60500:s0 -> Node0x5f60550;
+	Node0x5f60500:s1 -> Node0x5f605f0;
+	Node0x5f60550 [shape=record,label="{.lr.ph.preheader:                                 \l  br label %.lr.ph\l}"];
+	Node0x5f60550 -> Node0x5f60640;
+	Node0x5f605a0 [shape=record,label="{.preheader.loopexit:                              \l  br label %.preheader\l}"];
+	Node0x5f605a0 -> Node0x5f605f0;
+	Node0x5f605f0 [shape=record,label="{.preheader:                                       \l  call void @llvm.memset.p0i8.i64(i8* bitcast ([1048576 x i32]* @key_buff2 to\l... i8*), i8 0, i64 4194304, i32 16, i1 false)\l  ret void\l}"];
+	Node0x5f60640 [shape=record,label="{.lr.ph:                                           \l  %indvars.iv = phi i64 [ %indvars.iv.next, %alloc_mem.exit1 ], [ 0,\l... %.lr.ph.preheader ]\l  %8 = tail call noalias i8* @malloc(i64 4096) #4\l  %9 = icmp eq i8* %8, null\l  br i1 %9, label %10, label %alloc_mem.exit1\l|{<s0>T|<s1>F}}"];
+	Node0x5f60640:s0 -> Node0x5f60690;
+	Node0x5f60640:s1 -> Node0x5f606e0;
+	Node0x5f60690 [shape=record,label="{%10:\l\l  tail call void @perror(i8* getelementptr inbounds ([24 x i8], [24 x i8]*\l... @.str, i64 0, i64 0)) #6\l  tail call void @exit(i32 1) #7\l  unreachable\l}"];
+	Node0x5f606e0 [shape=record,label="{alloc_mem.exit1:                                  \l  %11 = load i32**, i32*** @bucket_size, align 8, !tbaa !1\l  %12 = getelementptr inbounds i32*, i32** %11, i64 %indvars.iv\l  %13 = bitcast i32** %12 to i8**\l  store i8* %8, i8** %13, align 8, !tbaa !1\l  %indvars.iv.next = add nuw nsw i64 %indvars.iv, 1\l  %14 = icmp slt i64 %indvars.iv.next, %2\l  br i1 %14, label %.lr.ph, label %.preheader.loopexit\l|{<s0>T|<s1>F}}"];
+	Node0x5f606e0:s0 -> Node0x5f60640;
+	Node0x5f606e0:s1 -> Node0x5f605a0;
+}

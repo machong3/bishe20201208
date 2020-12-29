@@ -1,0 +1,9 @@
+digraph "CFG for 'alloc_mem' function" {
+	label="CFG for 'alloc_mem' function";
+
+	Node0x5f4ba10 [shape=record,label="{%0:\l  %1 = tail call noalias i8* @malloc(i64 %size) #4\l  %2 = icmp eq i8* %1, null\l  br i1 %2, label %3, label %4\l|{<s0>T|<s1>F}}"];
+	Node0x5f4ba10:s0 -> Node0x5f5fa40;
+	Node0x5f4ba10:s1 -> Node0x5f5fa90;
+	Node0x5f5fa40 [shape=record,label="{%3:\l\l  tail call void @perror(i8* getelementptr inbounds ([24 x i8], [24 x i8]*\l... @.str, i64 0, i64 0)) #6\l  tail call void @exit(i32 1) #7\l  unreachable\l}"];
+	Node0x5f5fa90 [shape=record,label="{%4:\l\l  ret i8* %1\l}"];
+}

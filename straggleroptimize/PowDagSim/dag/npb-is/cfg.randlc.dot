@@ -1,0 +1,12 @@
+digraph "CFG for 'randlc' function" {
+	label="CFG for 'randlc' function";
+
+	Node0x5f46690 [shape=record,label="{%0:\l  %.b = load i1, i1* @KS, align 1\l  br i1 %.b, label %._crit_edge, label %.preheader10\l|{<s0>T|<s1>F}}"];
+	Node0x5f46690:s0 -> Node0x5f4c540;
+	Node0x5f46690:s1 -> Node0x5f4c590;
+	Node0x5f4c540 [shape=record,label="{._crit_edge:                                      \l  %.pre = load double, double* @R23, align 8, !tbaa !1\l  %.pre11 = load double, double* @T23, align 8, !tbaa !1\l  %.pre12 = load double, double* @R46, align 8, !tbaa !1\l  %.pre13 = load double, double* @T46, align 8, !tbaa !1\l  br label %1\l}"];
+	Node0x5f4c540 -> Node0x5f4c5e0;
+	Node0x5f4c590 [shape=record,label="{.preheader10:                                     \l  store double 0x3E80000000000000, double* @R23, align 8, !tbaa !1\l  store double 8.388608e+06, double* @T23, align 8, !tbaa !1\l  store double 0x3D10000000000000, double* @R46, align 8, !tbaa !1\l  store double 0x42D0000000000000, double* @T46, align 8, !tbaa !1\l  store i1 true, i1* @KS, align 1\l  br label %1\l}"];
+	Node0x5f4c590 -> Node0x5f4c5e0;
+	Node0x5f4c5e0 [shape=record,label="{%1:\l\l  %2 = phi double [ %.pre13, %._crit_edge ], [ 0x42D0000000000000,\l... %.preheader10 ]\l  %3 = phi double [ %.pre12, %._crit_edge ], [ 0x3D10000000000000,\l... %.preheader10 ]\l  %4 = phi double [ %.pre11, %._crit_edge ], [ 8.388608e+06, %.preheader10 ]\l  %5 = phi double [ %.pre, %._crit_edge ], [ 0x3E80000000000000, %.preheader10\l... ]\l  %6 = load double, double* %A, align 8, !tbaa !1\l  %7 = fmul double %5, %6\l  %8 = fptosi double %7 to i32\l  %9 = sitofp i32 %8 to double\l  %10 = fmul double %4, %9\l  %11 = fsub double %6, %10\l  %12 = load double, double* %X, align 8, !tbaa !1\l  %13 = fmul double %5, %12\l  %14 = fptosi double %13 to i32\l  %15 = sitofp i32 %14 to double\l  %16 = fmul double %4, %15\l  %17 = fsub double %12, %16\l  %18 = fmul double %9, %17\l  %19 = fmul double %11, %15\l  %20 = fadd double %19, %18\l  %21 = fmul double %5, %20\l  %22 = fptosi double %21 to i32\l  %23 = sitofp i32 %22 to double\l  %24 = fmul double %4, %23\l  %25 = fsub double %20, %24\l  %26 = fmul double %4, %25\l  %27 = fmul double %11, %17\l  %28 = fadd double %27, %26\l  %29 = fmul double %3, %28\l  %30 = fptosi double %29 to i32\l  %31 = sitofp i32 %30 to double\l  %32 = fmul double %2, %31\l  %33 = fsub double %28, %32\l  store double %33, double* %X, align 8, !tbaa !1\l  %34 = load double, double* @R46, align 8, !tbaa !1\l  %35 = fmul double %34, %33\l  ret double %35\l}"];
+}

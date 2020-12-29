@@ -1,0 +1,13 @@
+job, application id, configuration: 
+
+33,20,234 in DC
+33,20,4 in DC EXPERIMENTAL
+
+AREA in pace 		config 33,20,224: 270*30.7 = 8289
+AREA in DC   		config 33,20,234: 195*49   = 9555
+AREA in DC EXPERIMENTAL config 33,20,4  : 1357*12.3= 16691
+
+
+A few of such jobs scheduled away from their "pace configs" can result in significantly longer makespan 
+because makepsan*power_cap AREA is limited and should be used efficiently.
+
